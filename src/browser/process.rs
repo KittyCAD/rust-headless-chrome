@@ -380,7 +380,7 @@ impl Process {
         let process = TemporaryProcess(
             command
                 .args(&args)
-                .stderr(Stdio::inherit())
+                .stderr(Stdio::piped())
                 .stdout(Stdio::inherit())
                 .spawn()?,
             temp_user_data_dir,
